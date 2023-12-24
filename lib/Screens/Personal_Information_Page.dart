@@ -1,7 +1,5 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:dhruman/Context/Colors.dart';
+import 'package:dhruman/Widgets/text.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class PersonalInformationSection extends StatelessWidget {
   final VoidCallback scrollToSection;
@@ -14,20 +12,68 @@ class PersonalInformationSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          DefaultTextStyle(
-              style: GoogleFonts.roboto(
-                fontSize: 65.0,
-                fontWeight: FontWeight.w900,
-                color: extralighttheme, // Your custom color
-              ),
-              child: AnimatedTextKit(
-                animatedTexts: [
-                  WavyAnimatedText("Bringing visions to life and creating immersive digital experience"),
+          TextHeading1("Bringing visions to life and"),
+          TextHeading1("creating immersive digital"),
+          TextHeading1("experience"),
+          Container(
+              height: 300,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  // Photo
+                  Container(
+                    alignment: Alignment.bottomLeft,
+                    // Adjust the distance from the bottom
+                    child: RotatedBox(
+                      quarterTurns: -1,
+                      child: TextHeading2(
+                        'Dhruman Rathod',
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 400,
+                    width: 300,
+                    child: Stack(
+                      children: [
+                        Image.asset(
+                          'photos/profile.png',
+                          width: 400,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Colors.transparent,
+                                // Fully transparent at the top
+                                Colors.black.withOpacity(0.6),
+                                // Opacity to make it darker
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  // Vertical Name
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    width: 400,
+                    child: TextNormal1("I am an experience Mobile Application Developer sepcialized in developing " +
+                        "User Interfaces, Mobile Apps, Web Apps, IoT services. " +
+                        "\nMy goal is to develop Applications and Digital Interfaces" +
+                        "that are not only aesthetically pleasing but also provide a seamless and engagic user experience." +
+                        "\nWith an extensive background in design and a passion for understanding user needs" +
+                        ",I create customized designed and graphical user interfaces that effectively communicate" +
+                        "the desired message while optimizing usability"),
+                  )
                 ],
-                isRepeatingAnimation: true,
-                onTap: () {
-                  print("Tap Event");
-                },
               ))
         ]);
     // Your personal information section content
