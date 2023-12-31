@@ -42,27 +42,27 @@ class _HomePageState extends State<HomePage> {
               navigateToProjectsPage: () =>
                   _scrollToSection(4), // 4 corresponds to the Projects page
             ),
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.95,
               child: PersonalInformationSection(
                   scrollToSection: () => _scrollToSection(2)),
             ),
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.95,
               child:
                   ExperienceSection(scrollToSection: () => _scrollToSection(3)),
             ),
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.95,
               child:
                   ProjectsSection(scrollToSection: () => _scrollToSection(4)),
             ),
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.95,
               child: GithubProjectsSection(
                   scrollToSection: () => _scrollToSection(5)),
             ),
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.95,
               child: ContactFormSection(
                   scrollToSection: () => _scrollToSection(6)),
