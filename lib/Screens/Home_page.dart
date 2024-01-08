@@ -1,4 +1,3 @@
-import 'package:dhruman/Context/Colors.dart';
 import 'package:dhruman/Screens/Contact_Page.dart';
 import 'package:dhruman/Screens/Expereince_Page.dart';
 import 'package:dhruman/Screens/Github_Page.dart';
@@ -6,6 +5,8 @@ import 'package:dhruman/Screens/Introduction_Page.dart';
 import 'package:dhruman/Screens/Personal_Information_Page.dart';
 import 'package:dhruman/Screens/Project_Page.dart';
 import 'package:flutter/material.dart';
+
+import '../Context/Colors.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -29,6 +30,24 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  Widget buildNavigationButton(String label, int sectionIndex) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: extradarktheme,
+        backgroundColor: extralighttheme,
+      ),
+      onPressed: () => _scrollToSection(sectionIndex),
+      child: Text(label),
+    );
+  }
+
+  Widget buildSizedBoxForSection(Widget child) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.95,
+      child: child,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,88 +55,55 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         controller: _scrollController,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            IntroductionSection(
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      buildNavigationButton('INTRODUCTION', 1),
+                      buildNavigationButton('EXPERIENCE', 2),
+                      buildNavigationButton('PROJECTS', 3),
+                      buildNavigationButton('GITHUB', 4),
+                    ],
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.15,
+                  ),
+                ],
+              ),
+            ),
+            buildSizedBoxForSection(IntroductionSection(
               scrollToSection: () => _scrollToSection(1),
-              navigateToProjectsPage: () =>
-                  _scrollToSection(4), // 4 corresponds to the Projects page
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.95,
-              child: PersonalInformationSection(
-                  scrollToSection: () => _scrollToSection(2)),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.95,
-              child:
-                  ExperienceSection(scrollToSection: () => _scrollToSection(3)),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.95,
-              child:
-                  ProjectsSection(scrollToSection: () => _scrollToSection(4)),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.95,
-              child: GithubProjectsSection(
-                  scrollToSection: () => _scrollToSection(5)),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.95,
-              child: ContactFormSection(
-                  scrollToSection: () => _scrollToSection(6)),
-            )
+              navigateToProjectsPage: () => _scrollToSection(4),
+            )),
+            buildSizedBoxForSection(PersonalInformationSection(
+              scrollToSection: () => _scrollToSection(2),
+            )),
+            buildSizedBoxForSection(ExperienceSection(
+              scrollToSection: () => _scrollToSection(3),
+            )),
+            buildSizedBoxForSection(ProjectsSection(
+              scrollToSection: () => _scrollToSection(4),
+            )),
+            buildSizedBoxForSection(GithubProjectsSection(
+              scrollToSection: () => _scrollToSection(5),
+            )),
+            buildSizedBoxForSection(ContactFormSection(
+              scrollToSection: () => _scrollToSection(6),
+            )),
           ],
         ),
-      ),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            backgroundColor: extralighttheme,
-            foregroundColor: extradarktheme,
-            onPressed: () => _scrollToSection(0),
-            child: const Icon(Icons.arrow_upward),
-          ),
-          const SizedBox(height: 10),
-          FloatingActionButton(
-            backgroundColor: extralighttheme,
-            foregroundColor: extradarktheme,
-            onPressed: () => _scrollToSection(1),
-            child: const Text('1'),
-          ),
-          const SizedBox(height: 10),
-          FloatingActionButton(
-            backgroundColor: extralighttheme,
-            foregroundColor: extradarktheme,
-            onPressed: () => _scrollToSection(2),
-            child: const Text('2'),
-          ),
-          const SizedBox(height: 10),
-          FloatingActionButton(
-            backgroundColor: extralighttheme,
-            foregroundColor: extradarktheme,
-            onPressed: () => _scrollToSection(3),
-            child: const Text('3'),
-          ),
-          const SizedBox(height: 10),
-          FloatingActionButton(
-            backgroundColor: extralighttheme,
-            foregroundColor: extradarktheme,
-            onPressed: () => _scrollToSection(4),
-            child: const Text('4'),
-          ),
-          // Add buttons for other sections as needed
-        ],
       ),
     );
   }
 }
-// WaveAnimation(
-// size: 300,
-// color: extralighttheme,
-// centerChild: CircleAvatar(
-// radius: 200,
-// backgroundImage: AssetImage(homeBackground),
-// ),
-// ),
