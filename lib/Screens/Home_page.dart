@@ -29,7 +29,6 @@ class _HomePageState extends State<HomePage> {
       curve: Curves.easeInOut,
     );
   }
-
   Widget buildNavigationButton(String label, int sectionIndex) {
     return TextButton(
       style: TextButton.styleFrom(
@@ -71,6 +70,7 @@ class _HomePageState extends State<HomePage> {
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
                       children: [
                         buildNavigationButton('INTRODUCTION', 1),
                         buildNavigationButton('EXPERIENCE', 2),
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
             ),
             buildSizedBoxForSection(IntroductionSection(
               scrollToSection: () => _scrollToSection(1),
-              // navigateToProjectsPage: () => _scrollToSection(4),
+              navigateToProjectsPage: () => _scrollToSection(4),
             )),
             buildSizedBoxForSection(PersonalInformationSection(
               scrollToSection: () => _scrollToSection(2),

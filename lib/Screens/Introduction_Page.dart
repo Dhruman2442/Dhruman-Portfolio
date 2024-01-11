@@ -1,18 +1,19 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:dhruman/Context/Colors.dart';
 import 'package:dhruman/Context/Strings.dart';
+import 'package:dhruman/Widgets/button.dart';
 import 'package:dhruman/Widgets/text.dart';
 import 'package:flutter/material.dart';
 
 class IntroductionSection extends StatelessWidget {
   final VoidCallback scrollToSection;
 
-  // final VoidCallback navigateToProjectsPage;
+  final VoidCallback navigateToProjectsPage;
 
   IntroductionSection({
     super.key,
     required this.scrollToSection,
-    // required this.navigateToProjectsPage,
+    required this.navigateToProjectsPage,
   });
 
   @override
@@ -23,27 +24,25 @@ class IntroductionSection extends StatelessWidget {
         alignment: Alignment.centerLeft,
         children: <Widget>[
           Container(
-            padding: const EdgeInsets.only(left: 500),
             width: MediaQuery.of(context).size.width,
             child: Image.asset(
               homeBackground,
               height: MediaQuery.of(context).size.height * 0.9,
-              opacity: const AlwaysStoppedAnimation(.5),
+              opacity: const AlwaysStoppedAnimation(.2),
             ),
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(child: TextHeading1("Dhruman Rathod")),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  const Text(
+                  Text(
                     'Building applications',
-                    style: TextStyle(fontSize: 43.0),
-                  ),
-                  SizedBox(
-                    width: 20,
+                    style: TextStyle(fontSize: 43.0, color: lighttheme),
                   ),
                   DefaultTextStyle(
                     style: TextStyle(
@@ -52,10 +51,11 @@ class IntroductionSection extends StatelessWidget {
                       fontFamily: 'Horizon',
                     ),
                     child: Container(
+                      alignment: Alignment.centerLeft,
                       height: 100,
+                      width: 275,
                       child: AnimatedTextKit(
                         animatedTexts: [
-                          RotateAnimatedText('USER-FRIENDLY'),
                           RotateAnimatedText('RESPONSIVE'),
                           RotateAnimatedText('CONSISTENT'),
                           RotateAnimatedText('SECURE'),
@@ -69,7 +69,7 @@ class IntroductionSection extends StatelessWidget {
                   ),
                 ],
               ),
-              // Button1(navigateToProjectsPage, "See Projects"),
+              Button1(navigateToProjectsPage, "See Projects"),
             ],
           ),
         ],
