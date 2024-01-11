@@ -1,16 +1,18 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:dhruman/Context/Colors.dart';
 import 'package:dhruman/Context/Strings.dart';
-import 'package:dhruman/Widgets/button.dart';
 import 'package:dhruman/Widgets/text.dart';
 import 'package:flutter/material.dart';
+
 class IntroductionSection extends StatelessWidget {
   final VoidCallback scrollToSection;
-  final VoidCallback navigateToProjectsPage;
 
-  IntroductionSection({super.key,
+  // final VoidCallback navigateToProjectsPage;
+
+  IntroductionSection({
+    super.key,
     required this.scrollToSection,
-    required this.navigateToProjectsPage,
+    // required this.navigateToProjectsPage,
   });
 
   @override
@@ -40,7 +42,9 @@ class IntroductionSection extends StatelessWidget {
                     'Building applications',
                     style: TextStyle(fontSize: 43.0),
                   ),
-                  SizedBox(width: 20,),
+                  SizedBox(
+                    width: 20,
+                  ),
                   DefaultTextStyle(
                     style: TextStyle(
                       color: extralighttheme,
@@ -65,7 +69,7 @@ class IntroductionSection extends StatelessWidget {
                   ),
                 ],
               ),
-              Button1(navigateToProjectsPage, "See Projects"),
+              // Button1(navigateToProjectsPage, "See Projects"),
             ],
           ),
         ],
@@ -73,4 +77,3 @@ class IntroductionSection extends StatelessWidget {
     );
   }
 }
-

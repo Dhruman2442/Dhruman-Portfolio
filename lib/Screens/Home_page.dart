@@ -31,13 +31,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget buildNavigationButton(String label, int sectionIndex) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        foregroundColor: extradarktheme,
-        backgroundColor: extralighttheme,
-      ),
+    return TextButton(
+      style: TextButton.styleFrom(
+          textStyle: TextStyle(fontSize: 20), foregroundColor: lighttheme),
       onPressed: () => _scrollToSection(sectionIndex),
-      child: Text(label),
+      child: Text(
+        label,
+      ),
     );
   }
 
@@ -61,20 +61,23 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.all(10),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width * 0.15,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      buildNavigationButton('INTRODUCTION', 1),
-                      buildNavigationButton('EXPERIENCE', 2),
-                      buildNavigationButton('PROJECTS', 3),
-                      buildNavigationButton('GITHUB', 4),
-                    ],
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.6,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        buildNavigationButton('INTRODUCTION', 1),
+                        buildNavigationButton('EXPERIENCE', 2),
+                        buildNavigationButton('PROJECTS', 3),
+                        buildNavigationButton('GITHUB', 4),
+                      ],
+                    ),
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.15,
@@ -84,7 +87,7 @@ class _HomePageState extends State<HomePage> {
             ),
             buildSizedBoxForSection(IntroductionSection(
               scrollToSection: () => _scrollToSection(1),
-              navigateToProjectsPage: () => _scrollToSection(4),
+              // navigateToProjectsPage: () => _scrollToSection(4),
             )),
             buildSizedBoxForSection(PersonalInformationSection(
               scrollToSection: () => _scrollToSection(2),
