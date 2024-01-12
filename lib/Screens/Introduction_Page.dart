@@ -62,7 +62,7 @@ class IntroductionSection extends StatelessWidget {
                           RotateAnimatedText('UNIQUE'),
                         ],
                         onTap: () {
-                          print("Tap Event");
+
                         },
                       ),
                     ),
