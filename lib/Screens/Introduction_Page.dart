@@ -10,7 +10,7 @@ class IntroductionSection extends StatelessWidget {
 
   final VoidCallback navigateToProjectsPage;
 
-  IntroductionSection({
+  const IntroductionSection({
     super.key,
     required this.scrollToSection,
     required this.navigateToProjectsPage,
@@ -19,15 +19,16 @@ class IntroductionSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 10, left: 100),
+      padding:  EdgeInsets.all(100),
       child: Stack(
         alignment: Alignment.centerLeft,
         children: <Widget>[
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Image.asset(
               homeBackground,
-              height: MediaQuery.of(context).size.height * 0.9,
+              height: MediaQuery.of(context).size.height * 0.5,
+              width: MediaQuery.of(context).size.width*0.5,
               opacity: const AlwaysStoppedAnimation(.2),
             ),
           ),
@@ -61,9 +62,7 @@ class IntroductionSection extends StatelessWidget {
                           RotateAnimatedText('SECURE'),
                           RotateAnimatedText('UNIQUE'),
                         ],
-                        onTap: () {
-
-                        },
+                        onTap: () {},
                       ),
                     ),
                   ),

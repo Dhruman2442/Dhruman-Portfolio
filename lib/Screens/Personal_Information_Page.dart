@@ -15,7 +15,7 @@ class PersonalInformationSection extends StatelessWidget {
           TextHeading1("Bringing visions to life and"),
           TextHeading1("creating immersive digital"),
           TextHeading1("experience"),
-          Container(
+          SizedBox(
               height: 300,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +32,7 @@ class PersonalInformationSection extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: 400,
                     width: 300,
                     child: Stack(
@@ -59,19 +59,13 @@ class PersonalInformationSection extends StatelessWidget {
                     ),
                   ),
                   // Vertical Name
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   Container(
                     alignment: Alignment.topLeft,
                     width: 400,
-                    child: TextNormal1("I am an experience Mobile Application Developer sepcialized in developing " +
-                        "User Interfaces, Mobile Apps, Web Apps, IoT services. " +
-                        "\nMy goal is to develop Applications and Digital Interfaces" +
-                        "that are not only aesthetically pleasing but also provide a seamless and engagic user experience." +
-                        "\nWith an extensive background in design and a passion for understanding user needs" +
-                        ",I create customized designed and graphical user interfaces that effectively communicate" +
-                        "the desired message while optimizing usability"),
+                    child: TextNormal1("I am an experience Mobile Application Developer sepcialized in developing User Interfaces, Mobile Apps, Web Apps, IoT services. \nMy goal is to develop Applications and Digital Interfacesthat are not only aesthetically pleasing but also provide a seamless and engagic user experience.\nWith an extensive background in design and a passion for understanding user needs,I create customized designed and graphical user interfaces that effectively communicatethe desired message while optimizing usability"),
                   )
                 ],
               ))
