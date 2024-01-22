@@ -5,6 +5,7 @@ import 'package:dhruman/Screens/Introduction_Page.dart';
 import 'package:dhruman/Screens/Personal_Information_Page.dart';
 import 'package:dhruman/Screens/Project_Page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../Context/Colors.dart';
 
@@ -29,13 +30,15 @@ class _HomePageState extends State<HomePage> {
       curve: Curves.easeInOut,
     );
   }
+
   Widget buildNavigationButton(String label, int sectionIndex) {
     return TextButton(
       style: TextButton.styleFrom(
-          textStyle: TextStyle(fontSize: 20), foregroundColor: lighttheme),
+          textStyle: const TextStyle(fontSize: 20), foregroundColor: lighttheme),
       onPressed: () => _scrollToSection(sectionIndex),
       child: Text(
         label,
+        style: GoogleFonts.roboto(fontSize: 16),
       ),
     );
   }
@@ -67,10 +70,10 @@ class _HomePageState extends State<HomePage> {
                     width: MediaQuery.of(context).size.width * 0.15,
                   ),
                   Container(
+                    margin: const EdgeInsets.all(10),
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
                       children: [
                         buildNavigationButton('INTRODUCTION', 1),
                         buildNavigationButton('EXPERIENCE', 2),

@@ -19,7 +19,7 @@ class IntroductionSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding:  EdgeInsets.all(100),
+      padding:  const EdgeInsets.all(100),
       child: Stack(
         alignment: Alignment.centerLeft,
         children: <Widget>[
