@@ -10,6 +10,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../Context/Colors.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
