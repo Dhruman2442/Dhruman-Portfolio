@@ -10,19 +10,27 @@ class ExperienceSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        expereinceCard("Skyacres", "XYZ", "projects/flutter.png", context,(){}),
+        expereinceCard("Skyacres (June 2023 - Current)",
+            "R&D Software Engineer", "projects/flutter.png", context, () {}),
         const SizedBox(
           height: 10,
         ),
-        expereinceCard("Rewaa Tech Verge", "XYZ", "projects/flutter.png", context,(){}),
+        expereinceCard(
+            "Rewaa Tech Verge (Jan 2022 - Aug 2022)",
+            "Mobile Application Developer",
+            "projects/flutter.png",
+            context,
+            () {}),
         const SizedBox(
           height: 10,
         ),
-        expereinceCard("Hiyaa Infotech", "XYZ", "projects/flutter.png", context,(){}),
+        expereinceCard("Hiyaa Infotech(May 2021 - Dec 2021)",
+            "Android Developer", "projects/flutter.png", context, () {}),
         const SizedBox(
           height: 10,
         ),
-        expereinceCard("Akash Technolabs", "XYZ", "projects/flutter.png", context,(){}),
+        expereinceCard("Akash Technolabs", "Internship", "projects/flutter.png",
+            context, () {}),
       ],
     );
     // Your experience section content
