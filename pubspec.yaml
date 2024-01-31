@@ -16,6 +16,7 @@ dependencies:
   wave:
   animated_text_kit:
   google_fonts:
+  carousel_slider:
 
 dev_dependencies:
   flutter_test:

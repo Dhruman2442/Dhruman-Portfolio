@@ -36,7 +36,7 @@ class IntroductionSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(child: TextHeading1("Dhruman Rathod")),
+              Container(child: TextHeading1("Skyacres Agrotechnology")),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,

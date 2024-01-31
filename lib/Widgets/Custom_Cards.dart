@@ -27,3 +27,21 @@ Widget expereinceCard(String title, String detail, String imageLocation,
     ),
   );
 }
+
+Widget projectCard(
+    String projectImage, String projectName, String projectDetail) {
+  return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20), color: darktheme),
+      child: Padding(
+        padding: EdgeInsets.all(10),
+        child: Row(
+          children: [
+            Image.asset(projectImage),
+            Column(
+              children: [TextHeading2(projectName), TextNormal1(projectDetail)],
+            )
+          ],
+        ),
+      ));
+}

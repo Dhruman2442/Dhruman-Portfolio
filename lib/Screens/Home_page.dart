@@ -1,5 +1,5 @@
 import 'package:dhruman/Screens/Contact_Page.dart';
-import 'package:dhruman/Screens/Expereince_Page.dart';
+import 'package:dhruman/Screens/Experience_Page.dart';
 import 'package:dhruman/Screens/Github_Page.dart';
 import 'package:dhruman/Screens/Introduction_Page.dart';
 import 'package:dhruman/Screens/Personal_Information_Page.dart';
@@ -36,7 +36,8 @@ class _HomePageState extends State<HomePage> {
   Widget buildNavigationButton(String label, int sectionIndex) {
     return TextButton(
       style: TextButton.styleFrom(
-          textStyle: const TextStyle(fontSize: 20), foregroundColor: lighttheme),
+          textStyle: const TextStyle(fontSize: 20),
+          foregroundColor: lighttheme),
       onPressed: () => _scrollToSection(sectionIndex),
       child: Text(
         label,
