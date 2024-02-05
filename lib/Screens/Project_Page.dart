@@ -3,11 +3,11 @@ import 'package:dhruman/Widgets/Custom_Cards.dart';
 import 'package:flutter/material.dart';
 
 class ProjectsSection extends StatelessWidget {
-  List<Widget> carouselItems = [
-    projectCard("", "projectName", "projectDetail"),
-    projectCard("", "projectName", "projectDetail"),
-    projectCard("", "projectName", "projectDetail"),
-    projectCard("", "projectName", "projectDetail")
+  List<Widget> projectItems = [
+    projectCard("web_crawler.png", "Web Crawler", "projectDetail"),
+    projectCard("skillStack.png", "Skill Stack", "projectDetail"),
+    projectCard("gameScoop.png", "Game Scoop", "projectDetail"),
+    projectCard("osFinance.png", "OSFinance", "projectDetail")
   ];
   final VoidCallback scrollToSection;
 
@@ -20,7 +20,7 @@ class ProjectsSection extends StatelessWidget {
       children: <Widget>[
         // Other widgets
         CarouselSlider(
-          items: carouselItems,
+          items: projectItems,
           options: CarouselOptions(
             height: MediaQuery.of(context).size.height * 0.2,
             // Customize the height of the carousel
