@@ -34,3 +34,10 @@ Widget TextNormal1(String text) {
     ),
   );
 }
+
+Widget TextSmall(String text) {
+  return Text(
+    text,
+    style: GoogleFonts.roboto(),
+  );
+}
